@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
@@ -60,6 +61,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                     case R.id.rbRight:
                         btnGravity = Gravity.RIGHT;
                         break;
+
                 }
 
                 // переносим полученное значение выравнивания в LayoutParams
@@ -70,6 +72,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 btnNew.setText(etName.getText().toString());
                 llMain.addView(btnNew, lParams);
 
+                break;
+
+            case R.id.btnClear:
+                llMain.removeAllViews();
+                Toast.makeText(this, "Удалено", Toast.LENGTH_SHORT).show();
                 break;
         }
     }
